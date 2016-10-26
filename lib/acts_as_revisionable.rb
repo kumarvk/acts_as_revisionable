@@ -228,7 +228,7 @@ module ActsAsRevisionable
             end
 
             disable_revisioning do
-              retval = yield
+              retval = yield if block_given?
             end
 
             raise ActiveRecord::Rollback unless errors.empty?
